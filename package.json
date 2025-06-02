@@ -1,19 +1,19 @@
 {
-  "name": "bun-ts-starter",
+  "name": "@stacksjs/glint",
   "type": "module",
-  "version": "0.4.0",
-  "description": "A simple TypeScript starter kit using Bun.",
+  "version": "0.0.0",
+  "description": "A performant linter & formatter. For HTML, CSS, JS & TS.",
   "author": "Chris Breuer <chris@stacksjs.org>",
   "license": "MIT",
-  "homepage": "https://github.com/stacksjs/ts-starter#readme",
+  "homepage": "https://github.com/stacksjs/glint#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stacksjs/ts-starter.git"
+    "url": "git+https://github.com/stacksjs/glint.git"
   },
   "bugs": {
     "url": "https://github.com/stacksjs/ts-starter/issues"
   },
-  "keywords": ["typescript", "starter", "kit", "bun", "package"],
+  "keywords": ["typescript", "linter", "formatter", "html", "css", "js", "stx", "stacksjs"],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -26,25 +26,25 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "bin-name": "./dist/bin/cli.js"
+    "glint": "./dist/bin/cli.js"
   },
   "files": ["README.md", "dist"],
   "scripts": {
     "build": "bun --bun build.ts && bun run compile",
-    "compile": "bun build ./bin/cli.ts --compile --minify --outfile bin/bin-name",
+    "compile": "bun build ./bin/cli.ts --compile --minify --outfile bin/glint",
     "compile:all": "bun run compile:linux-x64 && bun run compile:linux-arm64 && bun run compile:windows-x64 && bun run compile:darwin-x64 && bun run compile:darwin-arm64",
-    "compile:linux-x64": "bun build ./bin/cli.ts --compile --minify --target=bun-linux-x64 --outfile bin/bin-name-linux-x64",
-    "compile:linux-arm64": "bun build ./bin/cli.ts --compile --minify --target=bun-linux-arm64 --outfile bin/bin-name-linux-arm64",
-    "compile:windows-x64": "bun build ./bin/cli.ts --compile --minify --target=bun-windows-x64 --outfile bin/bin-name-windows-x64.exe",
-    "compile:darwin-x64": "bun build ./bin/cli.ts --compile --minify --target=bun-darwin-x64 --outfile bin/bin-name-darwin-x64",
-    "compile:darwin-arm64": "bun build ./bin/cli.ts --compile --minify --target=bun-darwin-arm64 --outfile bin/bin-name-darwin-arm64",
+    "compile:linux-x64": "bun build ./bin/cli.ts --compile --minify --target=bun-linux-x64 --outfile bin/glint-linux-x64",
+    "compile:linux-arm64": "bun build ./bin/cli.ts --compile --minify --target=bun-linux-arm64 --outfile bin/glint-linux-arm64",
+    "compile:windows-x64": "bun build ./bin/cli.ts --compile --minify --target=bun-windows-x64 --outfile bin/glint-windows-x64.exe",
+    "compile:darwin-x64": "bun build ./bin/cli.ts --compile --minify --target=bun-darwin-x64 --outfile bin/glint-darwin-x64",
+    "compile:darwin-arm64": "bun build ./bin/cli.ts --compile --minify --target=bun-darwin-arm64 --outfile bin/glint-darwin-arm64",
     "zip": "bun run zip:all",
     "zip:all": "bun run zip:linux-x64 && bun run zip:linux-arm64 && bun run zip:windows-x64 && bun run zip:darwin-x64 && bun run zip:darwin-arm64",
-    "zip:linux-x64": "zip -j bin/bin-name-linux-x64.zip bin/bin-name-linux-x64",
-    "zip:linux-arm64": "zip -j bin/bin-name-linux-arm64.zip bin/bin-name-linux-arm64",
-    "zip:windows-x64": "zip -j bin/bin-name-windows-x64.zip bin/bin-name-windows-x64.exe",
-    "zip:darwin-x64": "zip -j bin/bin-name-darwin-x64.zip bin/bin-name-darwin-x64",
-    "zip:darwin-arm64": "zip -j bin/bin-name-darwin-arm64.zip bin/bin-name-darwin-arm64",
+    "zip:linux-x64": "zip -j bin/glint-linux-x64.zip bin/glint-linux-x64",
+    "zip:linux-arm64": "zip -j bin/glint-linux-arm64.zip bin/glint-linux-arm64",
+    "zip:windows-x64": "zip -j bin/glint-windows-x64.zip bin/glint-windows-x64.exe",
+    "zip:darwin-x64": "zip -j bin/glint-darwin-x64.zip bin/glint-darwin-x64",
+    "zip:darwin-arm64": "zip -j bin/glint-darwin-arm64.zip bin/glint-darwin-arm64",
     "lint": "bunx --bun eslint .",
     "lint:fix": "bunx --bun eslint . --fix",
     "fresh": "bunx rimraf node_modules/ bun.lock && bun i",
